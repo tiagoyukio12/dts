@@ -193,4 +193,5 @@ if __name__ == '__main__':
             f_main=main,
             f_config=args.add_config,
             f_metrics=log_metrics,
+            log_dir='./logs',
             observer_type=args.observer)

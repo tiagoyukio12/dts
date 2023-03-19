@@ -133,8 +133,8 @@ class RecurrentNN_MIMO(RecurrentNN):
             y_hat = fn_inverse(y_hat)
             y = fn_inverse(y)
 
-        if fn_plot is not None:
-            fn_plot([y, y_hat])
+        # if fn_plot is not None:
+        #     fn_plot([y, y_hat])
 
         return self._eval(y, y_hat)
 

@@ -192,11 +192,14 @@ if __name__ == '__main__':
             f_config=args.add_config,
             observer_type=args.observer)
     else:
-        run_single_experiment(
-            experimentclass=DTSExperiment,
-            db_name=config['db'],
-            ex_name='rnn',
-            f_main=main,
-            f_config=args.add_config,
-            f_metrics=log_metrics,
-            observer_type=args.observer)
+        for i in range(1):
+            print(f'>> Iniciando experimento {i + 1}')
+            run_single_experiment(
+                experimentclass=DTSExperiment,
+                db_name=config['db'],
+                ex_name='rnn',
+                f_main=main,
+                f_config=args.add_config,
+                f_metrics=log_metrics,
+                log_dir='./logs',
+                observer_type=args.observer)

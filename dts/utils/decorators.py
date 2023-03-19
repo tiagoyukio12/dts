@@ -21,6 +21,9 @@ def f_main(args=None):
             print('--------- TEST RESULTS ---------------')
             print(test_loss)
             print('--------------------------------------')
+            csv_loss = ', '.join([str(round(v, 10)) for (_, v) in test_loss.items()])
+            with open('experiment_results.csv', 'a') as f:
+                f.write(csv_loss + '\n')
 
             # save the result metrics to db
             _run.info['model_metrics'] = dict(val_loss=val_loss, test_loss=test_loss)
